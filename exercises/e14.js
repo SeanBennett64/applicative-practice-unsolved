@@ -6,6 +6,17 @@ import { data } from "../data/data";
 
 export function getOrbitalPeriodsSum(data) {
   // Your code goes here...
+  const asteroids = data.asteroids;
+
+  let orbitalPeriodSum = asteroids
+  .map(function(asteroid) {
+    return asteroid.orbitalPeriod;
+  })
+  .reduce(function(duration, currentValue) {
+    return duration + currentValue;
+  }, 0);
+
+  return orbitalPeriodSum;
 }
 
 
