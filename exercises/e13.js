@@ -8,7 +8,6 @@ import { data } from "../data/data";
 export function getAveragePlanetsTemperature(data) {
   // Your code goes here...
 
-
 // note for the person grading this
 // The test refused to run with that top import active
 // the only way i could get it to run was to comment it out
@@ -24,15 +23,9 @@ export function getAveragePlanetsTemperature(data) {
 
   const planets = data.planets;
 
-  let averageTempOfAllPlanets = planets
-  .map(function(planet) {
-    return planet.avgTemp;
-  })
-  .reduce(function(temp, currentValue) {
-    return temp + currentValue / planets.length;
-  }, 0);
-
-  return averageTempOfAllPlanets;
+  return data.planets
+    .map((planet) => planet.avgTemp)
+    .reduce((temp, currentValue) => temp + currentValue / planets.length, 0);
 }
 
 
